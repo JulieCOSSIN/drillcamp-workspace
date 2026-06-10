@@ -1,0 +1,420 @@
+/* ============================================================
+   DRILLCAMP INC — CSS Snippet v1.3
+   Vault : C:/Users/Julie/Documents/Drillcamp Inc
+   Installation : .obsidian/snippets/drillcamp-inc.css
+   Activer via : Réglages > Apparence > CSS Snippets
+   ============================================================ */
+
+/* ---- IMPORT FONTS ---- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ---- VARIABLES LIQUID GLASS DARK ---- */
+:root {
+  --lg-dark-bg:     rgba(20,31,29,0.82);
+  --lg-dark-blur:   18px;
+  --lg-dark-border: rgba(255,255,255,0.11);
+  --lg-dark-shine:  rgba(255,255,255,0.16);
+  --lg-dark-floor:  rgba(0,0,0,0.20);
+}
+
+/* ---- TOKENS OBSIDIAN ---- */
+body.theme-dark,
+.theme-dark {
+  --background-primary:          #101D1B;
+  --background-primary-alt:      #0D1917;
+  --background-secondary:        #0D1917;
+  --background-secondary-alt:    #0B1614;
+  --background-modifier-border:  rgba(255,255,255,0.08);
+  --text-normal:                 rgba(255,255,255,0.88);
+  --text-muted:                  rgba(115,146,151,0.80);
+  --text-faint:                  rgba(255,255,255,0.35);
+  --interactive-accent:          #B89A82;
+  --interactive-accent-hover:    rgba(184,154,130,0.80);
+  --font-interface:              'DM Sans', system-ui, sans-serif;
+  --font-text:                   'DM Sans', system-ui, sans-serif;
+}
+
+/* ---- FOND & LAYOUT ---- */
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  background: linear-gradient(145deg, #101D1B 0%, #0D1917 60%, #0F1C1A 100%);
+}
+
+/* ---- TYPOGRAPHIE ---- */
+body,
+.markdown-source-view,
+.markdown-preview-view {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.markdown-preview-view h1,
+.markdown-source-view .HyperMD-header-1 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view .HyperMD-header-2 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.90);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view .HyperMD-header-3 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #B89A82;
+}
+
+/* ---- BLOCS DE CODE — liquid glass subtil (style barre Claude) ---- */
+.markdown-preview-view pre,
+.markdown-reading-view pre {
+  background: rgba(28,36,44,0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.06) inset,
+    0 -1px 0 rgba(0,0,0,0.20) inset;
+}
+
+.markdown-preview-view code,
+.markdown-reading-view code,
+.cm-s-obsidian .cm-inline-code {
+  background: rgba(28,36,44,0.55);
+  color: rgba(184,154,130,0.90);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.87em;
+}
+
+/* ---- PANNEAU PARAMÈTRES (Settings modal) — liquid glass gradient ---- */
+.modal-container {
+  background: rgba(8,14,13,0.30) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.modal-container .modal {
+  background: linear-gradient(
+    145deg,
+    rgba(18,28,27,0.94) 0%,
+    rgba(12,20,19,0.97) 100%
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.06) inset,
+    0 -2px 0 rgba(0,0,0,0.30) inset,
+    0 32px 64px -16px rgba(0,0,0,0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.vertical-tab-nav-item.is-active {
+  background: rgba(184,154,130,0.14);
+  color: #B89A82;
+  border-radius: 5px;
+}
+
+/* ---- SIDEBAR — base arrondi + transition ---- */
+.nav-folder > .nav-folder-title {
+  border-radius: 6px !important;
+  margin:        2px 6px 2px 2px !important;
+  padding:       4px 8px !important;
+  transition:    background 0.15s, border-color 0.15s;
+}
+
+/* Cockpit + PROCESS */
+.nav-folder-title[data-path*="Le Cockpit"],
+.nav-folder-title[data-path*="PROCESS"] {
+  background:      rgba(58,82,70,0.42) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(148,216,182,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="Le Cockpit"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="PROCESS"] > .nav-folder-title-content {
+  color: rgba(255,255,255,0.75) !important;
+  font-weight: 500 !important;
+}
+
+/* The Drillcamp */
+.nav-folder-title[data-path*="The Drillcamp"],
+.nav-folder-title[data-path*="Drillcamp - Cabinet"] {
+  background:      rgba(58,82,70,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(148,216,182,0.15) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.10) !important;
+}
+.nav-folder-title[data-path*="The Drillcamp"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="Drillcamp - Cabinet"] > .nav-folder-title-content {
+  color: #94d8b6 !important;
+  font-weight: 500 !important;
+}
+
+/* JC Productions */
+.nav-folder-title[data-path*="JC Productions"] {
+  background:      rgba(53,76,65,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(216,214,148,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="JC Productions"] > .nav-folder-title-content {
+  color: #d8d694 !important;
+  font-weight: 500 !important;
+}
+
+/* Les Yeux de Julie */
+.nav-folder-title[data-path*="Yeux"] {
+  background:      rgba(51,70,61,0.48) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(232,196,164,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="Yeux"] > .nav-folder-title-content {
+  color: #e8c4a4 !important;
+  font-weight: 500 !important;
+}
+
+/* Voice Of Kings */
+.nav-folder-title[data-path*="Kings"] {
+  background:      rgba(49,64,57,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(196,180,232,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="Kings"] > .nav-folder-title-content {
+  color: #c4b4e8 !important;
+  font-weight: 500 !important;
+}
+
+/* DrillSchool / Formation */
+.nav-folder-title[data-path*="School"],
+.nav-folder-title[data-path*="Formation"] {
+  background:      rgba(47,59,57,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(148,196,232,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="School"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="Formation"] > .nav-folder-title-content {
+  color: #94c4e8 !important;
+  font-weight: 500 !important;
+}
+
+/* Find Your Church */
+.nav-folder-title[data-path*="Church"] {
+  background:      rgba(44,54,55,0.50) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(148,216,182,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path*="Church"] > .nav-folder-title-content {
+  color: #94d8b6 !important;
+  font-weight: 500 !important;
+}
+
+/* _assets, Journaling, Modèles — même style que Le Cockpit */
+.nav-folder-title[data-path="_assets"],
+.nav-folder-title[data-path="Journaling"],
+.nav-folder-title[data-path*="Mod"] {
+  background:      rgba(58,82,70,0.42) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:          1px solid rgba(148,216,182,0.12) !important;
+  box-shadow:      inset 0 1px 0 rgba(255,255,255,0.09) !important;
+}
+.nav-folder-title[data-path="_assets"] > .nav-folder-title-content,
+.nav-folder-title[data-path="Journaling"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="Mod"] > .nav-folder-title-content {
+  color: rgba(255,255,255,0.75) !important;
+  font-weight: 500 !important;
+}
+
+/* Claude — gradient orange DrillCamp */
+.nav-folder-title[data-path="Claude"] {
+  background: linear-gradient(
+    135deg,
+    rgba(175,90,63,0.70) 0%,
+    rgba(120,61,42,0.55) 100%
+  ) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border:     1px solid rgba(175,90,63,0.25) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12) !important;
+}
+.nav-folder-title[data-path="Claude"] > .nav-folder-title-content {
+  color: rgba(255,248,240,0.95) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+
+/* ---- CALLOUTS — LIQUID GLASS DARK ---- */
+.callout {
+  background:      var(--lg-dark-bg) !important;
+  backdrop-filter: blur(var(--lg-dark-blur));
+  -webkit-backdrop-filter: blur(var(--lg-dark-blur));
+  border-radius:   10px;
+  border:          1px solid var(--lg-dark-border) !important;
+  box-shadow:
+    inset 0 1px 0 var(--lg-dark-shine),
+    inset 0 -1px 0 var(--lg-dark-floor);
+  margin: 1rem 0;
+}
+
+.callout-title {
+  background:   transparent !important;
+  font-family:  'DM Sans', system-ui, sans-serif;
+  font-size:    0.78rem;
+  font-weight:  500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.callout-content {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size:   0.9rem;
+  color:       rgba(255,255,255,0.72);
+}
+
+.callout[data-callout="vision"]    { --callout-color: 184,154,130; --callout-icon: lucide-eye;          }
+.callout[data-callout="kpi"]       { --callout-color: 115,146,151; --callout-icon: lucide-bar-chart-2;  }
+.callout[data-callout="decision"]  { --callout-color: 212,168,83;  --callout-icon: lucide-check-circle; }
+.callout[data-callout="next"]      { --callout-color: 91,143,168;  --callout-icon: lucide-arrow-right;  }
+.callout[data-callout="ressource"] { --callout-color: 93,202,165;  --callout-icon: lucide-link;         }
+
+/* ---- TAGS ---- */
+.tag, a.tag {
+  background: rgba(28,42,41,0.88) !important;
+  color: #B89A82 !important;
+  border: 1px solid rgba(184,154,130,0.25) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  font-size: 0.78rem !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 -1px 0 rgba(0,0,0,0.25) inset !important;
+}
+.tag:hover, a.tag:hover {
+  color: rgba(184,154,130,1) !important;
+}
+
+/* ---- FRONTMATTER — encart liquid glass dark ---- */
+.metadata-container {
+  background:      var(--lg-dark-bg);
+  border:          1px solid var(--lg-dark-border);
+  box-shadow:
+    inset 0 1px 0 var(--lg-dark-shine),
+    inset 0 -1px 0 var(--lg-dark-floor);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius:   8px;
+  font-family:     'DM Sans', system-ui, sans-serif;
+  font-size:       0.82rem;
+  margin-bottom:   1.5rem;
+}
+
+/* Titre "Propriétés" aligné avec les noms de propriétés */
+.metadata-properties-heading {
+  padding-left: 2rem !important;
+}
+
+.metadata-content {
+  padding-left: 2rem;
+}
+
+.metadata-property-key {
+  color: #739297;
+  font-weight: 500;
+}
+
+.metadata-property-value {
+  color: rgba(255,255,255,0.80);
+}
+
+/* ---- CSSCLASSES — MODES VISUELS ---- */
+/* Usage : ajouter cssclasses: mode-matrix dans le frontmatter.
+   Actif en mode Lecture (Ctrl+E) uniquement. */
+
+.mode-matrix.markdown-preview-view,
+.mode-matrix .markdown-reading-view {
+  background: #050A09 !important;
+}
+.mode-matrix h1, .mode-matrix h2, .mode-matrix h3 {
+  color: #5DCAA5;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+.mode-matrix p, .mode-matrix li {
+  color: rgba(93,202,165,0.75);
+  font-family: 'SF Mono', ui-monospace, monospace;
+}
+.mode-matrix pre, .mode-matrix code {
+  background: rgba(10,20,18,0.90) !important;
+  color: #5DCAA5;
+  border-color: rgba(93,202,165,0.25) !important;
+}
+
+.mode-nasa.markdown-preview-view,
+.mode-nasa .markdown-reading-view {
+  background: #080D15 !important;
+}
+.mode-nasa h1 {
+  color: #5B8FA8;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.mode-nasa h2 {
+  color: rgba(91,143,168,0.75);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.mode-nasa p {
+  color: rgba(200,220,230,0.75);
+}
+
+.mode-gospel.markdown-preview-view,
+.mode-gospel .markdown-reading-view {
+  background: #0D1612 !important;
+}
+.mode-gospel h1 {
+  color: #D4A853;
+  font-style: italic;
+  font-size: 2rem;
+}
+.mode-gospel h2 {
+  color: rgba(212,168,83,0.75);
+  font-style: italic;
+}
+.mode-gospel p {
+  color: rgba(218,211,193,0.80);
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #101D1B; }
+::-webkit-scrollbar-thumb {
+  background: rgba(175,90,63,0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(175,90,63,0.65);
+}
