@@ -81,6 +81,41 @@ Même logique dans `Documents/`. Claude y dépose les livrables (HTML, MD, JSON,
 
 ---
 
+## GitHub Desktop — le repo dans l'explorateur Windows
+
+GitHub Desktop est l'application officielle de GitHub. Elle crée un dossier local sur le disque, synchronisé avec le repo distant. Le dossier apparaît dans l'explorateur Windows comme n'importe quel autre dossier.
+
+Téléchargement : desktop.github.com (fichier `GitHubDesktopSetup-x64.exe`, gratuit, version 3.5.x).
+
+### Installation et premier clone
+
+1. Installe GitHub Desktop et connecte le compte `JulieCOSSIN`
+2. **File → Clone repository** → sélectionne `drillcamp-workspace`
+3. Choisis l'emplacement local (ex. `Documents/GitHub/drillcamp-workspace`)
+4. Le dossier apparaît immédiatement dans l'explorateur Windows
+
+### Récupérer ce que Claude pousse
+
+Quand Claude dépose un fichier dans le repo depuis une conversation, il n'arrive pas automatiquement sur le disque. Il faut faire un **Pull** :
+
+Dans GitHub Desktop → bouton **Fetch origin** en haut (vérifie s'il y a du nouveau) → puis **Pull origin** si des fichiers sont disponibles.
+
+Le fichier apparaît alors dans le dossier local. On le glisse dans le vault Obsidian depuis l'explorateur Windows.
+
+### Le flux complet avec GitHub Desktop
+
+```
+Claude pousse dans obsidian/
+    ↓
+GitHub Desktop → Fetch origin → Pull
+    ↓
+Dossier local drillcamp-workspace/obsidian/
+    ↓
+Glisser la note dans le bon dossier du vault Obsidian
+```
+
+---
+
 ## Pourquoi ce n'est pas un remplacement du vault
 
 Le repo GitHub n'est pas le vault. Il ne remplace pas Obsidian, il le complète.
@@ -98,6 +133,7 @@ Le flux normal : Claude produit dans le repo -> on importe dans le vault quand l
 
 ## Ce qui reste à faire
 
+- [x] Installer GitHub Desktop et cloner drillcamp-workspace
 - [ ] Tester l'attachement d'un fichier depuis GitHub via l'icône trombone dans une conversation
 - [ ] Tester la synchronisation du repo dans les settings du Projet Claude
 - [ ] Valider la convention de nommage sur la durée
