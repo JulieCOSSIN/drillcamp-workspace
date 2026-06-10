@@ -1,0 +1,340 @@
+/* ============================================================
+   DRILLCAMP INC — CSS Snippet v1.2
+   Vault : C:/Users/Julie/Documents/Drillcamp Inc
+   Installation : .obsidian/snippets/drillcamp-inc.css
+   Activer via : Réglages > Apparence > CSS Snippets
+   ============================================================ */
+
+/* ---- IMPORT FONTS ---- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ---- TOKENS OBSIDIAN ---- */
+body.theme-dark,
+.theme-dark {
+  --background-primary:          #101D1B;
+  --background-primary-alt:      #0D1917;
+  --background-secondary:        #0D1917;
+  --background-secondary-alt:    #0B1614;
+  --background-modifier-border:  rgba(255,255,255,0.08);
+  --text-normal:                 rgba(255,255,255,0.88);
+  --text-muted:                  rgba(115,146,151,0.80);
+  --text-faint:                  rgba(255,255,255,0.35);
+  --interactive-accent:          #B89A82;
+  --interactive-accent-hover:    rgba(184,154,130,0.80);
+  --font-interface:              'DM Sans', system-ui, sans-serif;
+  --font-text:                   'DM Sans', system-ui, sans-serif;
+}
+
+/* ---- FOND & LAYOUT ---- */
+/* Vue note — gradient de profondeur liquid glass */
+.workspace-leaf-content[data-type="markdown"] .view-content {
+  background: linear-gradient(145deg, #101D1B 0%, #0D1917 60%, #0F1C1A 100%);
+}
+
+/* ---- TYPOGRAPHIE ---- */
+body,
+.markdown-source-view,
+.markdown-preview-view {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.markdown-preview-view h1,
+.markdown-source-view .HyperMD-header-1 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view .HyperMD-header-2 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.90);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view .HyperMD-header-3 {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #B89A82;
+}
+
+/* ---- BLOCS DE CODE — liquid glass subtil (style barre Claude) ---- */
+/* Reading View */
+.markdown-preview-view pre,
+.markdown-reading-view pre {
+  background: rgba(28,36,44,0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.06) inset,
+    0 -1px 0 rgba(0,0,0,0.20) inset;
+}
+
+/* Live Preview */
+.cm-editor .cm-content pre {
+  background: rgba(28,36,44,0.55) !important;
+}
+
+/* Inline code */
+.markdown-preview-view code,
+.markdown-reading-view code,
+.cm-s-obsidian .cm-inline-code {
+  background: rgba(28,36,44,0.55);
+  color: rgba(184,154,130,0.90);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 0.87em;
+}
+
+/* ---- PANNEAU PARAMÈTRES (Settings modal) — liquid glass gradient ---- */
+.modal-container {
+  background: rgba(8,14,13,0.30) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.modal-container .modal {
+  background: linear-gradient(
+    145deg,
+    rgba(18,28,27,0.94) 0%,
+    rgba(12,20,19,0.97) 100%
+  ) !important;
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.06) inset,
+    0 -2px 0 rgba(0,0,0,0.30) inset,
+    0 32px 64px -16px rgba(0,0,0,0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.vertical-tab-nav-item.is-active {
+  background: rgba(184,154,130,0.14);
+  color: #B89A82;
+  border-radius: 5px;
+}
+
+/* ---- SIDEBAR — glass cards par entité ---- */
+
+/* Cockpit + PROCESS */
+.nav-folder-title[data-path*="Cockpit"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="PROCESS"] > .nav-folder-title-content {
+  background: rgba(58,82,70,0.42) !important;
+  color: rgba(255,255,255,0.75) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* The Drillcamp */
+.nav-folder-title[data-path*="Drillcamp"] > .nav-folder-title-content {
+  background: rgba(58,82,70,0.50) !important;
+  color: #94d8b6 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* JC Productions */
+.nav-folder-title[data-path*="Productions"] > .nav-folder-title-content {
+  background: rgba(53,76,65,0.50) !important;
+  color: #d8d694 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* Les Yeux de Julie */
+.nav-folder-title[data-path*="Yeux"] > .nav-folder-title-content {
+  background: rgba(51,70,61,0.48) !important;
+  color: #e8c4a4 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* Voice Of Kings */
+.nav-folder-title[data-path*="Kings"] > .nav-folder-title-content {
+  background: rgba(49,64,57,0.50) !important;
+  color: #c4b4e8 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* DrillSchool / Formation */
+.nav-folder-title[data-path*="School"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="Formation"] > .nav-folder-title-content {
+  background: rgba(47,59,57,0.50) !important;
+  color: #94c4e8 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* Find Your Church */
+.nav-folder-title[data-path*="Church"] > .nav-folder-title-content {
+  background: rgba(44,54,55,0.50) !important;
+  color: #94d8b6 !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* _assets, Journaling, Modèles — même style que Le Cockpit */
+.nav-folder-title[data-path="_assets"] > .nav-folder-title-content,
+.nav-folder-title[data-path="Journaling"] > .nav-folder-title-content,
+.nav-folder-title[data-path*="Mod"] > .nav-folder-title-content {
+  background: rgba(58,82,70,0.42) !important;
+  color: rgba(255,255,255,0.75) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 500 !important;
+}
+
+/* Claude — gradient orange DrillCamp */
+.nav-folder-title[data-path="Claude"] > .nav-folder-title-content {
+  background: linear-gradient(
+    135deg,
+    rgba(175,90,63,0.75) 0%,
+    rgba(120,61,42,0.60) 100%
+  ) !important;
+  color: rgba(255,248,240,0.95) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em;
+}
+
+/* ---- CALLOUTS GLASS SOMBRE ---- */
+.callout[data-callout="vision"],
+.callout[data-callout="kpi"],
+.callout[data-callout="decision"],
+.callout[data-callout="next"],
+.callout[data-callout="ressource"] {
+  background: rgba(20,31,29,0.82) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.11) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.16) inset;
+}
+
+.callout[data-callout="vision"]    { --callout-color: 184,154,130; }
+.callout[data-callout="kpi"]       { --callout-color: 115,146,151; }
+.callout[data-callout="decision"]  { --callout-color: 200,150,80;  }
+.callout[data-callout="next"]      { --callout-color: 90,140,180;  }
+.callout[data-callout="ressource"] { --callout-color: 93,202,165;  }
+
+/* ---- TAGS ---- */
+.tag, a.tag {
+  background: rgba(28,42,41,0.88) !important;
+  color: #B89A82 !important;
+  border: 1px solid rgba(184,154,130,0.25) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  font-size: 0.78rem !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.10) inset,
+    0 -1px 0 rgba(0,0,0,0.25) inset !important;
+}
+.tag:hover, a.tag:hover {
+  color: rgba(184,154,130,1) !important;
+}
+
+/* ---- FRONTMATTER — titre aligné avec les noms de propriétés ---- */
+.metadata-properties-heading {
+  padding-left: 2rem !important;
+}
+.metadata-content {
+  padding-left: 2rem !important;
+}
+
+/* ---- CSSCLASSES — MODES VISUELS ---- */
+/* Usage : ajouter cssclasses: mode-matrix (ou mode-nasa, mode-gospel)
+   dans le frontmatter. Actif en mode Lecture (Ctrl+E) uniquement. */
+
+.mode-matrix.markdown-preview-view,
+.mode-matrix .markdown-reading-view {
+  background: #050A09 !important;
+}
+.mode-matrix h1, .mode-matrix h2, .mode-matrix h3 {
+  color: #5DCAA5;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+.mode-matrix p, .mode-matrix li {
+  color: rgba(93,202,165,0.75);
+  font-family: 'SF Mono', ui-monospace, monospace;
+}
+.mode-matrix pre, .mode-matrix code {
+  background: rgba(10,20,18,0.90) !important;
+  color: #5DCAA5;
+  border-color: rgba(93,202,165,0.25) !important;
+}
+
+.mode-nasa.markdown-preview-view,
+.mode-nasa .markdown-reading-view {
+  background: #080D15 !important;
+}
+.mode-nasa h1 {
+  color: #5B8FA8;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.mode-nasa h2 {
+  color: rgba(91,143,168,0.75);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.mode-nasa p {
+  color: rgba(200,220,230,0.75);
+}
+
+.mode-gospel.markdown-preview-view,
+.mode-gospel .markdown-reading-view {
+  background: #0D1612 !important;
+}
+.mode-gospel h1 {
+  color: #D4A853;
+  font-style: italic;
+  font-size: 2rem;
+}
+.mode-gospel h2 {
+  color: rgba(212,168,83,0.75);
+  font-style: italic;
+}
+.mode-gospel p {
+  color: rgba(218,211,193,0.80);
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #101D1B; }
+::-webkit-scrollbar-thumb {
+  background: rgba(175,90,63,0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(175,90,63,0.65);
+}
