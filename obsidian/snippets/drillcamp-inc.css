@@ -1,5 +1,5 @@
 /* ============================================================
-   DRILLCAMP INC — CSS Snippet v1.6
+   DRILLCAMP INC — CSS Snippet v1.7
    Vault : C:/Users/Julie/Documents/Drillcamp Inc
    Installation : .obsidian/snippets/drillcamp-inc.css
    Activer via : Réglages > Apparence > CSS Snippets
@@ -389,7 +389,9 @@ body,
 }
 
 /* ---- FRONTMATTER — encart liquid glass dark ---- */
-/* v1.6 : margin-left 12px conservé (alignement Custom Frames validé)
+/* v1.7 : marges réduites de 1cm de chaque côté (rapprochement sidebars)
+   margin-left : 12px (alignement Custom Frames) - 1cm = calc(12px - 1cm)
+   margin-right : 0 - 1cm = -1cm
    margin-bottom avec !important pour forcer l'espacement en mode lecture */
 .metadata-container {
   background:      var(--lg-dark-bg);
@@ -402,8 +404,8 @@ body,
   border-radius:   8px;
   font-family:     'DM Sans', system-ui, sans-serif;
   font-size:       0.82rem;
-  margin-left:     12px !important;
-  margin-right:    0 !important;
+  margin-left:     calc(12px - 1cm) !important;
+  margin-right:    -1cm !important;
   margin-bottom:   3rem !important;
 }
 
@@ -430,6 +432,14 @@ body,
 
 .metadata-property-value {
   color: rgba(255,255,255,0.80);
+}
+
+/* ---- CUSTOM FRAMES EMBED — élargissement horizontal (v1.7) ---- */
+/* Même réduction de 1cm de chaque côté que l'encart Propriétés
+   calc(12px - 1cm) préserve l'alignement relatif encart / embed */
+.block-language-custom-frames {
+  margin-left:  calc(12px - 1cm) !important;
+  margin-right: -1cm !important;
 }
 
 /* ---- CSSCLASSES — MODES VISUELS ---- */
@@ -502,3 +512,4 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(175,90,63,0.65);
 }
+
