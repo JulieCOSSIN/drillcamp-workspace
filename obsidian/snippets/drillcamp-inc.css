@@ -1,5 +1,5 @@
 /* ============================================================
-   DRILLCAMP INC — CSS Snippet v1.7
+   DRILLCAMP INC — CSS Snippet v1.8
    Vault : C:/Users/Julie/Documents/Drillcamp Inc
    Installation : .obsidian/snippets/drillcamp-inc.css
    Activer via : Réglages > Apparence > CSS Snippets
@@ -389,9 +389,9 @@ body,
 }
 
 /* ---- FRONTMATTER — encart liquid glass dark ---- */
-/* v1.7 : marges réduites de 1cm de chaque côté (rapprochement sidebars)
-   margin-left : 12px (alignement Custom Frames) - 1cm = calc(12px - 1cm)
-   margin-right : 0 - 1cm = -1cm
+/* v1.8 : extension portée à 1.5cm de chaque côté (+0.5cm vs v1.7)
+   margin-left : 12px (alignement Custom Frames) - 1.5cm = calc(12px - 1.5cm)
+   margin-right : -1.5cm
    margin-bottom avec !important pour forcer l'espacement en mode lecture */
 .metadata-container {
   background:      var(--lg-dark-bg);
@@ -404,8 +404,8 @@ body,
   border-radius:   8px;
   font-family:     'DM Sans', system-ui, sans-serif;
   font-size:       0.82rem;
-  margin-left:     calc(12px - 1cm) !important;
-  margin-right:    -1cm !important;
+  margin-left:     calc(12px - 1.5cm) !important;
+  margin-right:    -1.5cm !important;
   margin-bottom:   3rem !important;
 }
 
@@ -434,12 +434,15 @@ body,
   color: rgba(255,255,255,0.80);
 }
 
-/* ---- CUSTOM FRAMES EMBED — élargissement horizontal (v1.7) ---- */
-/* Même réduction de 1cm de chaque côté que l'encart Propriétés
-   calc(12px - 1cm) préserve l'alignement relatif encart / embed */
+/* ---- CUSTOM FRAMES EMBED — élargissement horizontal (v1.8) ---- */
+/* 1.5cm de chaque côté — même extension que l'encart Propriétés.
+   width: calc(100% + 3cm - 12px) compense le comportement width:100% implicite
+   de l'embed : sans cette ligne, le bord droit ne s'étend pas malgré margin-right.
+   Formule : 3cm = 2 × 1.5cm (les deux côtés), -12px = offset du margin-left base. */
 .block-language-custom-frames {
-  margin-left:  calc(12px - 1cm) !important;
-  margin-right: -1cm !important;
+  margin-left:  calc(12px - 1.5cm) !important;
+  margin-right: -1.5cm !important;
+  width:        calc(100% + 3cm - 12px) !important;
 }
 
 /* ---- CSSCLASSES — MODES VISUELS ---- */
@@ -512,4 +515,5 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(175,90,63,0.65);
 }
+
 
