@@ -1,8 +1,12 @@
 /* ============================================================
-   DRILLCAMP INC — CSS Snippet v1.5
+   DRILLCAMP INC — CSS Snippet v1.6
    Vault : C:/Users/Julie/Documents/Drillcamp Inc
    Installation : .obsidian/snippets/drillcamp-inc.css
    Activer via : Réglages > Apparence > CSS Snippets
+   ============================================================
+   CALIBRATION : taille de police Obsidian 20% ≈ body 12px
+   rem CSS = 16px (base navigateur, indépendant du slider Obsidian)
+   Référence de taille : encart Propriétés/Frontmatter à 0.82rem
    ============================================================ */
 
 /* ---- IMPORT FONTS ---- */
@@ -47,15 +51,28 @@ body,
   -webkit-font-smoothing: antialiased;
 }
 
-/* v1.5 — Taille de corps réduite pour harmoniser avec l'encart frontmatter */
+/* v1.6 — Corps de texte aligné sur la référence encart (0.82rem)
+   Mode lecture UNIQUEMENT — ne touche pas le mode éditeur */
 .markdown-preview-view,
 .markdown-reading-view {
-  font-size: 0.875rem;
+  font-size: 0.82rem;
 }
 
-/* ---- TYPOGRAPHIE — TITRES ---- */
+/* ---- TITRE INLINE (nom du fichier en mode lecture) — v1.6 ---- */
+/* L'inline-title est l'élément AU-DESSUS de l'encart, distinct du H1 markdown.
+   Obsidian le stylo à ~2em par défaut, ce qui l'écrase à l'écran. */
+.inline-title {
+  font-family:    'DM Sans', system-ui, sans-serif !important;
+  font-size:      1.5rem !important;
+  font-weight:    700 !important;
+  color:          #FFFFFF !important;
+  letter-spacing: -0.01em !important;
+  line-height:    1.25 !important;
+  margin-bottom:  0.5rem !important;
+}
 
-/* v1.5 — H1 réduit */
+/* ---- TYPOGRAPHIE — TITRES MARKDOWN ---- */
+
 .markdown-preview-view h1,
 .markdown-source-view .HyperMD-header-1 {
   font-family: 'DM Sans', system-ui, sans-serif;
@@ -101,7 +118,7 @@ body,
   margin-bottom: 0.5rem;
 }
 
-/* ---- PARAGRAPHES — espacement (mode lecture) — v1.5 ---- */
+/* ---- PARAGRAPHES — espacement (mode lecture) ---- */
 .markdown-preview-view p {
   margin-bottom: 1.2rem;
   line-height:   1.75;
@@ -138,7 +155,8 @@ body,
   font-size: 0.87em;
 }
 
-/* ---- PANNEAU PARAMÈTRES (Settings modal) — liquid glass gradient ---- */
+/* ---- PANNEAU PARAMÈTRES (Settings modal) — liquid glass + taille lisible ---- */
+/* v1.6 — font-size ajouté pour lisibilité à 20% font size Obsidian */
 .modal-container {
   background: rgba(8,14,13,0.30) !important;
   backdrop-filter: blur(20px);
@@ -158,6 +176,7 @@ body,
     0 32px 64px -16px rgba(0,0,0,0.65);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  font-size: 0.875rem;
 }
 
 .vertical-tab-nav-item.is-active {
@@ -174,15 +193,17 @@ body,
   transition:    background 0.15s, border-color 0.15s;
 }
 
-/* v1.5 — Taille police sidebar harmonisée avec l'encart frontmatter */
+/* v1.6 — Sidebar réduite à 0.78rem pour s'harmoniser visuellement
+   avec l'encart frontmatter à 0.82rem (poids visuel des badges justifie
+   la légère différence) */
 .nav-folder-title-content,
 .nav-file-title-content {
-  font-size: 0.82rem !important;
+  font-size: 0.78rem !important;
 }
 
-/* v1.5 — Outline panel (sidebar droite) */
+/* v1.6 — Outline panel (sidebar droite) à la même échelle */
 .tree-item-inner {
-  font-size: 0.82rem !important;
+  font-size: 0.78rem !important;
 }
 
 /* Cockpit + PROCESS */
@@ -368,7 +389,8 @@ body,
 }
 
 /* ---- FRONTMATTER — encart liquid glass dark ---- */
-/* v1.5 : margin-left affiné pour alignement précis avec Custom Frames */
+/* v1.6 : margin-left 12px conservé (alignement Custom Frames validé)
+   margin-bottom avec !important pour forcer l'espacement en mode lecture */
 .metadata-container {
   background:      var(--lg-dark-bg);
   border:          1px solid var(--lg-dark-border);
@@ -382,7 +404,14 @@ body,
   font-size:       0.82rem;
   margin-left:     12px !important;
   margin-right:    0 !important;
-  margin-bottom:   3rem;
+  margin-bottom:   3rem !important;
+}
+
+/* v1.6 — Ciblage spécifique mode lecture pour garantir l'espacement
+   (en mode édition fonctionne déjà, en mode lecture nécessite le !important) */
+.markdown-preview-view .metadata-container,
+.markdown-reading-view .metadata-container {
+  margin-bottom: 3rem !important;
 }
 
 /* Titre "Propriétés" aligné avec les noms de propriétés */
