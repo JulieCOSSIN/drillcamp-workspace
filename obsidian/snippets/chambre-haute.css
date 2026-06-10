@@ -1,5 +1,5 @@
 /* ============================================================
-   LA CHAMBRE HAUTE — CSS Snippet v1.3
+   LA CHAMBRE HAUTE — CSS Snippet v1.4
    Vault : [chemin La Chambre Haute]
    Installation : .obsidian/snippets/chambre-haute.css
    Activer via : Réglages > Apparence > CSS Snippets
@@ -64,14 +64,15 @@ body,
   line-height: 1.2;
 }
 
-/* H2 — DM Sans 700, même que H3 */
+/* H2 — v1.4 : taille augmentée */
 .markdown-preview-view h2,
 .markdown-source-view .HyperMD-header-2 {
   font-family: 'DM Sans', system-ui, sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #32302b;
   letter-spacing: 0;
+  margin-bottom: 0.3rem;
 }
 
 /* H3 — DM Sans 700, sombre */
@@ -81,6 +82,14 @@ body,
   font-weight: 700;
   font-size: 0.95rem;
   color: #32302b;
+}
+
+/* ---- LIGNES CONTINUES — espacement (mode lecture) — v1.4 ---- */
+.markdown-preview-view hr,
+.markdown-reading-view hr {
+  margin-top:    2.5rem;
+  margin-bottom: 2.5rem;
+  border-color:  rgba(50,48,43,0.20);
 }
 
 /* ---- LIENS — plus foncés que le muted ---- */
@@ -168,6 +177,7 @@ body,
 }
 
 /* ---- FRONTMATTER — encart liquid glass light ---- */
+/* v1.4 : font-size augmenté pour meilleure lisibilité en mode lecture */
 .metadata-container {
   background:      var(--lg-light-bg);
   border:          1px solid var(--lg-light-border);
@@ -178,7 +188,7 @@ body,
   -webkit-backdrop-filter: blur(12px);
   border-radius:   8px;
   font-family:     'DM Sans', system-ui, sans-serif;
-  font-size:       0.82rem;
+  font-size:       0.9rem;
   margin-bottom:   1.5rem;
 }
 
