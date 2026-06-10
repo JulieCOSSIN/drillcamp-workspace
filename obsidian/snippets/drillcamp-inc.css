@@ -1,5 +1,5 @@
 /* ============================================================
-   DRILLCAMP INC — CSS Snippet v1.3
+   DRILLCAMP INC — CSS Snippet v1.4
    Vault : C:/Users/Julie/Documents/Drillcamp Inc
    Installation : .obsidian/snippets/drillcamp-inc.css
    Activer via : Réglages > Apparence > CSS Snippets
@@ -56,11 +56,12 @@ body,
   letter-spacing: -0.01em;
 }
 
+/* v1.4 — H2 : taille et gras augmentés */
 .markdown-preview-view h2,
 .markdown-source-view .HyperMD-header-2 {
   font-family: 'DM Sans', system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: 0.95rem;
   color: rgba(255,255,255,0.90);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -72,6 +73,32 @@ body,
   font-weight: 600;
   font-size: 1rem;
   color: #B89A82;
+}
+
+/* ---- ESPACEMENT TITRES (mode lecture) — v1.4 ---- */
+.markdown-preview-view h1 {
+  margin-top:    2rem;
+  margin-bottom: 1rem;
+}
+.markdown-preview-view h2 {
+  margin-top:    2.5rem;
+  margin-bottom: 0.75rem;
+}
+.markdown-preview-view h3 {
+  margin-top:    2rem;
+  margin-bottom: 0.5rem;
+}
+.markdown-preview-view h4 {
+  margin-top:    1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ---- LIGNES CONTINUES — espacement (mode lecture) — v1.4 ---- */
+.markdown-preview-view hr,
+.markdown-reading-view hr {
+  margin-top:    2.5rem;
+  margin-bottom: 2.5rem;
+  border-color:  rgba(255,255,255,0.12);
 }
 
 /* ---- BLOCS DE CODE — liquid glass subtil (style barre Claude) ---- */
@@ -316,6 +343,8 @@ body,
 }
 
 /* ---- FRONTMATTER — encart liquid glass dark ---- */
+/* v1.4 : margin-left: 0 pour aligner avec les embeds HTML (côté gauche) */
+/* v1.4 : margin-bottom augmenté pour aérer l'espace avant le premier contenu */
 .metadata-container {
   background:      var(--lg-dark-bg);
   border:          1px solid var(--lg-dark-border);
@@ -327,7 +356,9 @@ body,
   border-radius:   8px;
   font-family:     'DM Sans', system-ui, sans-serif;
   font-size:       0.82rem;
-  margin-bottom:   1.5rem;
+  margin-left:     0 !important;
+  margin-right:    0 !important;
+  margin-bottom:   3rem;
 }
 
 /* Titre "Propriétés" aligné avec les noms de propriétés */
