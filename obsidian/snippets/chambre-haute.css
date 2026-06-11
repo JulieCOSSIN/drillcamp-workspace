@@ -1,5 +1,5 @@
 /* ============================================================
-   LA CHAMBRE HAUTE — CSS Snippet v1.4
+   LA CHAMBRE HAUTE — CSS Snippet v1.5
    Vault : [chemin La Chambre Haute]
    Installation : .obsidian/snippets/chambre-haute.css
    Activer via : Réglages > Apparence > CSS Snippets
@@ -125,6 +125,23 @@ body,
   font-size: 0.87em;
 }
 
+/* ---- SYNTAX HIGHLIGHTING — keywords (v1.5) ---- */
+/* Obsidian utilise deux systèmes selon le mode :
+   Prism.js (.token.*) en mode lecture, CodeMirror (.cm-*) en mode édition.
+   Le jaune/orange par défaut est illisible sur le fond beige #C5BEB0.
+   Remplacement : teal profond #1A5C5D (~5.5:1 de contraste). */
+.markdown-preview-view .token.keyword,
+.markdown-preview-view .token.builtin,
+.markdown-preview-view .token.function,
+.markdown-reading-view .token.keyword,
+.markdown-reading-view .token.builtin,
+.markdown-reading-view .token.function,
+.cm-s-obsidian .cm-keyword,
+.cm-s-obsidian .cm-builtin,
+.cm-s-obsidian .cm-def {
+  color: #1A5C5D !important;
+}
+
 /* ---- CALLOUTS — LIQUID GLASS LIGHT ---- */
 .callout {
   background:      var(--lg-light-bg) !important;
@@ -233,3 +250,4 @@ body,
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(74,139,140,0.65);
 }
+
